@@ -11,5 +11,7 @@
     <form action="{% url 'board:delete_article' article.id %}" method="post">
         {% csrf_token %}
         <button type="submit">삭제</button>
+
     </form>
+    {% include 'board/_comment.html' %}
 {% endblock %}

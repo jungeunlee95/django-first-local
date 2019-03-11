@@ -1,6 +1,7 @@
 {%  extends 'board/base.html' %}
 
 {% block body %}
+    <a href="{% url 'board:create_article' %}"><button>새글쓰기</button></a>
     {% if articles %}
         <ul>
             {% for article in articles %}

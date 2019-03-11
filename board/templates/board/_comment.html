@@ -11,6 +11,7 @@
             <form action="{% url 'board:delete_comment' article.id comment.id %}" method="post">
                 {% csrf_token %}
                 <button type="submit">삭제</button>
+                {# TODO : 이거 만들어라#}
             </form>
         {% endfor %}
         </ul>

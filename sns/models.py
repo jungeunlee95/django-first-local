@@ -41,3 +41,12 @@ class Posting(models.Model):
         if self.image:
             print(f'     image_size: {self.image.width}px * {self.image.height}px : {round(self.image.size / 1024)}kb')
         print('============================================')
+
+class Comment(models.Model):
+    posting = models.ForeignKey(Posting, on_delete=models.CASCADE)
+    content = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.posting.content[:10]} : {self.content[:20]}'
